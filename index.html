@@ -2,48 +2,274 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        select {
+            background-color: rgb(123, 255, 0);
+            color: rgba(19, 18, 19, 0.849);
+        }
+        select option {
+            background-color: lightcyan;
+            color: black;
+        }
+        div {
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Button */
+        .transition-button {
+            background-color: lightblue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .transition-button:hover {
+            background-color: lightcoral;
+        }
+
+        /* Animation */
+        .animation-box {
+            position: relative;
+            animation: move 10s infinite alternate;
+        }
+        @keyframes move {
+            from { left: 0; }
+            to { left: 1250px; }
+        }
+
+        /* List styling */
+        .pseudo-list li:nth-child(odd) {
+            background-color: rgb(211, 211, 211);
+        }
+        .pseudo-list li:nth-child(even) {
+            background-color: white;
+        }
+
+        /* Image filter */
+        .filter-image {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        .filter-image:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Quote */
+        .quote {
+            position: relative;
+            padding-left: 20px;
+            font-style: italic;
+        }
+        .quote::before {
+            content: '“';
+            font-size: 40px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: lightgray;
+        }
+
+        /* Flexbox */
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .box {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        /* Header & Footer Styling */
+        header, footer {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        nav a {
+            text-decoration: none;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+    </style>
 </head>
+
 <body>
-    
-    <header>
+
+<!-- HEADER (Used from your 1st message) -->
+<header>
     <h1>My Website</h1>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#goals">Goals</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </header>
-  
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>This is a paragraph about me.</p>
-    </section>
-  </main>
-  
- 
-    <div class="flex-container">
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-    <div class="box">Box 3</div>
-  </div>
-  <div class="grid-container">
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>
-    <div class="grid-item">4</div>
-    <div class="grid-item">5</div>
-    <div class="grid-item">6</div>
-  </div>
-  <div class="responsive-box">Resize the window to see the effect</div>
-   <footer>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<main>
+
+<section id="about">
+    <h1 style="color:rgb(9, 9, 151);">Welcome to my Page</h1>
+
+    <p style="color: rgb(95, 54, 4); font-size: medium;">
+        My name is <b>Abishek Jayswal</b>, and I am from <b>Nepal</b>, a country known for its rich culture
+        and stunning mountain landscapes. I am currently 23 years old and pursuing my studies in the
+        <b>Bachelor’s in Information Technology (BIT)</b> program at Laurea University of Applied Sciences.
+        I enjoy technology, outdoor activities, and learning new skills while exploring international experiences.
+    </p>
+
+    <center>
+        <button class="transition-button">Hover me</button>
+    </center>
+
+    <blockquote class="quote">Health is wealth</blockquote>
+
+    <center>
+        <img src="abishek.jpg"
+             alt="Portrait of Abishek Jayswal"
+             width="200" height="200"
+             style="border-radius:50%;"
+             border="3"
+             class="filter-image">
+    </center>
+</section>
+
+<!-- Goals -->
+<section id="goals">
+    <h2 style="color:darkgreen;">My Goals (Ordered List)</h2>
+
+    <ol>
+        <li>Join Cricket Club</li>
+        <li>Get Selected</li>
+        <li>Play for Nation</li>
+    </ol>
+
+    <h2 style="color:darkgreen;">My Hobbies (Unordered List)</h2>
+
+    <ul>
+        <li>Cooking</li>
+        <li>E-games</li>
+        <li>Fishing</li>
+    </ul>
+
+    <ul class="pseudo-list">
+        <li>Maths</li>
+        <li>Science</li>
+        <li>Social</li>
+        <li>English</li>
+    </ul>
+</section>
+
+<!-- Flexbox Boxes -->
+<div class="flex-container">
+    <div class="box">Sport</div>
+    <div class="box">Travel</div>
+    <div class="box">Technology</div>
+</div>
+
+<!-- Link -->
+<center>
+    <div>
+        <a href="https://canvas.laurea.fi/courses/13224/assignments/242108" target="_blank">
+            <font color="blue">Visit Laurea</font>
+        </a>
+    </div>
+
+<!-- Table -->
+    <table border="2" cellpadding="10" cellspacing="0" bgcolor="#ffffff">
+        <tr bgcolor="#99ccff">
+            <th>Course Name</th>
+            <th>Instructor</th>
+        </tr>
+        <tr>
+            <td>HTML & CSS Basics</td>
+            <td>Outi Grotenfelt</td>
+        </tr>
+        <tr>
+            <td>Project Management</td>
+            <td>S. King</td>
+        </tr>
+        <tr>
+            <td>Finnish Language</td>
+            <td>Miss Meri</td>
+        </tr>
+    </table>
+</center>
+
+<br><br>
+
+<!-- Form -->
+<section id="contact">
+<form action="#" method="post">
+    <fieldset>
+        <legend>Job Application Submission</legend>
+
+        Full Name: <input type="text" name="ApplicantName" placeholder="Applicant's name"><br><br>
+
+        Address: <input type="text" name="Address" placeholder="Current Address"><br><br>
+
+        Email: <input type="email" name="Email" placeholder="Applicant's Email"><br><br>
+
+        Contact: <input type="number" name="MobileNumber" placeholder="Phone Number"><br><br>
+
+        Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <br><br>
+
+        Documents:
+        <input type="checkbox"> Hygiene Passport
+        <input type="checkbox"> Occupational Passport
+        <input type="checkbox"> Road Safety Card
+        <br><br>
+
+        <select>
+            <option>--Worktime--</option>
+            <option>Full Time</option>
+            <option>Gig Work</option>
+            <option>Part Time</option>
+            <option>Fixed Term</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+</section>
+
+
+<h1 class="animation-box" style="color: blue;">Thank you for visiting</h1>
+
+</main>
+
+
+<!-- FOOTER (used from your first message) -->
+<footer>
     <p>Copyright 2025</p>
-  </footer>
- 
+</footer>
+
 </body>
 </html>
